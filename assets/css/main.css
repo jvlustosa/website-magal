@@ -341,12 +341,12 @@ h3 { font-size: 1.1rem; color: var(--gold-ink); }
   filter: grayscale(0.3) sepia(0.12) contrast(1) brightness(0.92);
 }
 .inst-row-hero { margin-top: 1.45rem; }
-.arrow-mark {
+.rm-mark {
   display: block;
   height: 24px;
   width: auto;
   max-width: 52px;
-  margin: 0 0 0.42rem;
+  margin: 0;
   object-fit: contain;
   opacity: 0.6;
   filter: grayscale(1) sepia(0.35) contrast(0.95) brightness(0.72);
@@ -435,36 +435,62 @@ button:focus-visible,
 .grid-2-rev { grid-template-columns: 0.95fr 1.05fr; }
 .photo-wide { aspect-ratio: 16/10; }
 
-.arrow-path {
+/* Roadmap: trilho horizontal com marcos numerados; vira vertical no stack/mobile. */
+.roadmap {
   list-style: none;
-  display: flex;
-  align-items: stretch;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
   padding: 0;
-  margin: 0;
-  gap: 0.35rem;
+  margin: 2.2rem 0 0;
 }
-.arrow-path li {
-  flex: 1;
+.roadmap li {
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-height: 7.4rem;
-  padding: 0.95rem 1.45rem 0.95rem 1.35rem;
-  background: var(--bg-2);
-  border: 1px solid var(--line);
-  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%, 12px 50%);
+  align-items: flex-start;
+  padding: 2.55rem 1.1rem 0 0;
 }
-.arrow-path li:first-child {
-  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 50%, calc(100% - 16px) 100%, 0 100%);
+.roadmap li::before {
+  content: "";
+  position: absolute;
+  top: 1.62rem;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--line);
 }
-.arrow-name {
+.roadmap li:last-child::before { display: none; }
+.rm-node {
+  position: absolute;
+  top: 1.62rem;
+  left: 0;
+  width: 11px;
+  height: 11px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  background: var(--bg);
+  transform: translate(-1px, -50%);
+}
+.rm-step {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--sans);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-ink);
+}
+.rm-name {
   font-family: var(--serif);
   font-weight: 700;
   font-size: 0.92rem;
   letter-spacing: 0.05em;
   color: var(--ink);
 }
-.arrow-meta {
+.rm-meta {
   font-family: var(--sans);
   font-size: 0.58rem;
   font-weight: 500;
@@ -473,19 +499,108 @@ button:focus-visible,
   color: var(--muted);
   margin-top: 0.28rem;
 }
-.arrow-path li.arrow-dest {
-  flex: 1.45;
+/* O destino nao tem logo: o padding extra alinha o nome com os demais marcos. */
+.roadmap li.rm-dest {
+  padding-right: 0;
+  padding-top: 4.47rem;
+}
+.rm-dest .rm-node {
+  width: 15px;
+  height: 15px;
   background: var(--gold);
   border-color: var(--gold);
-  clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 50%, calc(100% - 22px) 100%, 0 100%, 14px 50%);
+  box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.16);
 }
-.arrow-dest .arrow-name {
+.rm-dest .rm-name {
   font-size: 1.05rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #0a111f;
+  color: var(--gold-ink);
 }
-.arrow-dest .arrow-meta { color: #3a2a10; }
+
+.rm-badge {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 0.42rem;
+  cursor: help;
+}
+.rm-badge:hover .rm-mark,
+.rm-badge:focus-visible .rm-mark {
+  opacity: 0.95;
+  filter: grayscale(0.25) sepia(0.1) contrast(1) brightness(0.9);
+}
+.rm-badge:focus-visible { outline: 1px solid var(--gold); outline-offset: 4px; }
+.rm-tip {
+  position: absolute;
+  bottom: calc(100% + 0.55rem);
+  left: 0;
+  z-index: 5;
+  width: max-content;
+  max-width: 15rem;
+  padding: 0.5rem 0.7rem;
+  background: var(--ink);
+  color: #f4f1ea;
+  font-family: var(--sans);
+  font-size: 0.62rem;
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  box-shadow: 0 10px 24px rgba(10, 17, 31, 0.18);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+}
+.rm-tip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0.7rem;
+  border: 5px solid transparent;
+  border-top-color: var(--ink);
+}
+.rm-badge:hover .rm-tip,
+.rm-badge:focus-visible .rm-tip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.rm-honor {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.55rem;
+  color: var(--gold);
+}
+.rm-laurel { flex: none; }
+.rm-laurel-r { transform: scaleX(-1); }
+.rm-honor-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.15;
+}
+.rm-honor-title {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 0.64rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--gold-ink);
+  white-space: nowrap;
+}
+.rm-honor-sub {
+  font-family: var(--sans);
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.16rem;
+  white-space: nowrap;
+}
 
 .focus-grid {
   display: grid;
@@ -623,16 +738,23 @@ blockquote {
 }
 
 @media (max-width: 1040px) {
-  .arrow-path { flex-direction: column; gap: 0.3rem; }
-  .arrow-path li,
-  .arrow-path li:first-child {
-    min-height: 4.8rem;
-    padding: 1rem 1.2rem 1.5rem;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), 50% 100%, 0 calc(100% - 14px));
+  .roadmap {
+    grid-auto-flow: row;
+    grid-auto-columns: auto;
+    gap: 1.55rem;
   }
-  .arrow-path .arrow-dest {
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 18px), 50% 100%, 0 calc(100% - 18px));
+  .roadmap li,
+  .roadmap li.rm-dest { padding: 0 0 0 1.75rem; }
+  .roadmap li::before {
+    top: 0.5rem;
+    left: 5px;
+    right: auto;
+    width: 1px;
+    height: calc(100% + 1.55rem);
   }
+  .roadmap .rm-node { top: 0.5rem; left: 5px; transform: translate(-50%, -50%); }
+  .roadmap .rm-step { position: static; margin-bottom: 0.3rem; }
+  .roadmap .rm-mark { height: 20px; }
 }
 
 @media (max-width: 860px) {
@@ -652,32 +774,27 @@ blockquote {
   .inst-row { gap: 0.95rem 1.15rem; }
   .inst-row img { height: 28px; max-width: 58px; }
   .substack-band-inner { flex-direction: column; align-items: flex-start; }
-  .arrow-path { flex-direction: column; gap: 0.3rem; }
-  .arrow-path li,
-  .arrow-path li:first-child {
-    min-height: 4.8rem;
-    padding: 1rem 1.2rem 1.5rem;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), 50% 100%, 0 calc(100% - 14px));
-  }
-  .arrow-dest {
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 18px), 50% 100%, 0 calc(100% - 18px));
-  }
 }
 
-.arrow-path-stack {
-  flex-direction: column;
-  gap: 0.3rem;
+.roadmap-stack {
+  grid-auto-flow: row;
+  grid-auto-columns: auto;
+  gap: 1.55rem;
   margin: 2rem 0;
 }
-.arrow-path-stack li,
-.arrow-path-stack li:first-child {
-  min-height: 4.6rem;
-  padding: 1rem 1.2rem 1.5rem;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 14px), 50% 100%, 0 calc(100% - 14px));
+.roadmap-stack li,
+.roadmap-stack li.rm-dest { padding: 0 0 0 1.75rem; }
+.roadmap-stack li::before {
+  top: 0.5rem;
+  left: 5px;
+  right: auto;
+  width: 1px;
+  height: calc(100% + 1.55rem);
 }
-.arrow-path-stack li.arrow-dest {
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 18px), 50% 100%, 0 calc(100% - 18px));
-}
+.roadmap-stack .rm-node { top: 0.5rem; left: 5px; transform: translate(-50%, -50%); }
+.roadmap-stack .rm-step { position: static; margin-bottom: 0.3rem; }
+.roadmap-stack .rm-mark { height: 20px; }
+.roadmap-stack .rm-honor { margin-top: 0.6rem; }
 
 @media (max-width: 560px) {
   .brand-text { display: none; }
