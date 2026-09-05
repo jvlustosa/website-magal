@@ -1,0 +1,4 @@
+<a class="btn btn-gold btn-substack{% if include.class %} {{ include.class }}{% endif %}" href="{{ site.substack_subscribe | default: 'https://danielmagal.substack.com/subscribe' }}" rel="noopener">
+  {% include icon-substack.html %}
+  <span>{{ include.label | default: "Se inscreva" }}</span>
+</a>

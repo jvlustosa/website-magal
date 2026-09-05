@@ -1,0 +1,11 @@
+{
+  "name": "website-magal",
+  "private": true,
+  "description": "Jekyll site da marca Daniel Magalhães. npm scripts are thin wrappers over bundler.",
+  "scripts": {
+    "serve": "export PATH=\"$(ruby -e 'print Gem.user_dir')/bin:$PATH\" && bundle exec jekyll serve --livereload",
+    "build": "export PATH=\"$(ruby -e 'print Gem.user_dir')/bin:$PATH\" && JEKYLL_ENV=production bundle exec jekyll build",
+    "clean": "export PATH=\"$(ruby -e 'print Gem.user_dir')/bin:$PATH\" && bundle exec jekyll clean",
+    "setup": "export PATH=\"$(ruby -e 'print Gem.user_dir')/bin:$PATH\" && bundle install"
+  }
+}

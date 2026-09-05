@@ -19,4 +19,4 @@ description: Textos de Daniel Magalhães sobre concursos, ITA, IME, SEFAZ e ment
 {% endfor %}
 </div>
 
-<p class="cta-row"><a class="btn btn-gold" href="https://danielmagal.substack.com/" rel="noopener">Assinar no Substack</a></p>
+<p class="cta-row">{% include cta-substack.html %}</p>

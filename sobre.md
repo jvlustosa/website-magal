@@ -2,18 +2,20 @@
 layout: page
 title: Sobre
 kicker: Trajetória
-lead: Natural de Fortaleza. Formado pelo ITA. Auditor Fiscal. Essa não é a jornada de um herói envaidecido. É a jornada de como alcancei a prosperidade por meio de provas e concursos.
+lead: Natural de Fortaleza. Formado pelo ITA. Auditor Fiscal no Paraná. Essa não é a jornada de um herói envaidecido. É a jornada de como alcancei a prosperidade por meio de provas e concursos.
 permalink: /sobre/
-description: Quem é Daniel Magalhães — ITA, Força Aérea, Tesouro Nacional e Auditor Fiscal. A mentalidade de alto rendimento construída ao longo de 15 anos de provas.
+description: Quem é Daniel Magalhães — ITA, Força Aérea, Tesouro Nacional e Auditor Fiscal no Paraná. A mentalidade de alto rendimento construída ao longo de 15 anos de provas.
 ---
 
 <img class="photo" src="{{ '/assets/img/daniel.webp' | relative_url }}" alt="Daniel Magalhães" width="720" height="900" loading="eager" style="max-width:22rem;margin:0 0 2rem">
 
 Sou Daniel Magalhães.
 
-Hoje sou Auditor Fiscal. Já fui Auditor Federal de Finanças e Controle da Secretaria do Tesouro Nacional. Antes disso, tenente da Força Aérea, engenheiro formado pelo Instituto Tecnológico de Aeronáutica.
+Hoje sou Auditor Fiscal no Paraná. Já fui Auditor Federal de Finanças e Controle da Secretaria do Tesouro Nacional. Antes disso, tenente da Força Aérea, engenheiro formado pelo Instituto Tecnológico de Aeronáutica.
 
 Minha prosperidade veio após anos de provas, falhas e recomeços.
+
+{% include arrow-path.html stack=true %}
 
 ## De onde eu venho
 
@@ -44,7 +46,7 @@ A mentalidade que sustento se apoia em quatro eixos:
 - **Performance sob fadiga** — entregar mesmo cansado
 - **Ciclos de recuperação** — saber resetar e voltar mais forte
 
-CEFET → CMF → turmas especiais → IME → ITA → concursos de Auditor.
+CEFET → CMF → turmas especiais → IME → ITA → Tesouro → SEFAZ-PR → Auditor Fiscal no Paraná.
 
 Sempre estudando. Sempre evoluindo. Vivendo.
 
@@ -52,4 +54,7 @@ Sempre estudando. Sempre evoluindo. Vivendo.
 
 Compartilho essa mentalidade com quem quer competir em alto nível. Sem vitimismo. Sem narrativa de superação fácil. Com a honestidade de quem já errou o voo, dormiu no aeroporto e mesmo assim voltou a treinar.
 
-[Conhecer a mentoria](/mentoria/) · [Ler os escritos](/escritos/)
+<p class="cta-row">
+  {% include cta-substack.html %}
+  <a class="btn btn-ghost" href="{{ '/mentoria/' | relative_url }}">Conhecer a mentoria</a>
+</p>

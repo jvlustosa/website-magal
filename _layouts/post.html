@@ -5,6 +5,7 @@ layout: default
   <header class="page-head">
     <p class="kicker">{{ page.date | date: '%d %b %Y' }}</p>
     <h1 itemprop="headline">{{ page.title }}</h1>
+    <div class="ornament" aria-hidden="true"><span></span></div>
     {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
   </header>
   {% if page.image and page.image != '/assets/img/og.jpg' %}
@@ -15,11 +16,12 @@ layout: default
   <div itemprop="articleBody">
     {{ content }}
   </div>
-  {% if page.substack %}
   <p class="cta-row">
-    <a class="btn btn-gold" href="{{ page.substack }}" rel="noopener">Ler o capítulo completo no Substack</a>
+    {% include cta-substack.html %}
+    {% if page.substack %}
+    <a class="btn btn-ghost" href="{{ page.substack }}" rel="noopener">Ler o capítulo completo</a>
+    {% endif %}
   </p>
-  {% endif %}
 </article>
 <script type="application/ld+json">
 {

@@ -1,67 +1,108 @@
 ---
 layout: home
 title: Mentoria para Concursos Públicos
-description: Auditor Fiscal, formado pelo ITA. Mentalidade de alto rendimento para concursos públicos. Estratégia, método, mentoria e resultados.
+description: Auditor Fiscal no Paraná, formado pelo ITA. Resultado, personalidade e presença digital — a jornada de Daniel Magal em primeira pessoa.
 permalink: /
 ---
 <section class="hero">
-  <img
-    class="hero-banner"
-    src="{{ '/assets/img/banner.webp' | relative_url }}"
-    srcset="{{ '/assets/img/banner.webp' | relative_url }} 1024w"
-    sizes="100vw"
-    width="1024"
-    height="170"
-    alt="Daniel Magal — Estratégia, Método, Mentoria, Resultados"
-    fetchpriority="high"
-    decoding="async">
-  <div class="wrap hero-copy">
-    <p class="kicker">Estratégia · Método · Mentoria · Resultados</p>
-    <h1 class="hero-name">Daniel Magal</h1>
-    <p class="hero-sub">Mentoria para concursos públicos</p>
-    <p class="hero-line">Hoje sou Auditor Fiscal. Já fui Auditor do Tesouro Nacional, aprovado em vários concursos e formado pelo ITA. Minha prosperidade veio após anos de provas, falhas e recomeços.</p>
-    <div class="hero-actions">
-      <a class="btn btn-gold" href="{{ '/mentoria/' | relative_url }}">Conhecer a mentoria</a>
-      <a class="btn btn-ghost" href="https://danielmagal.substack.com/" rel="noopener">Ler no Substack</a>
+  <div class="wrap hero-split">
+    <div class="hero-copy">
+      <p class="hero-sub">Auditor Fiscal · Paraná · ITA</p>
+      <h1 class="hero-name">Daniel Magal</h1>
+      <div class="ornament" aria-hidden="true"><span></span></div>
+      {% include institutions.html class="inst-row-hero" %}
+      <p class="hero-line">Aos 13 eu fazia prova. Aos 18 voltei do IME. Aos 28 tomei posse. Entre um ponto e outro, eu vivi — e escrevo isso em público.</p>
+      <div class="hero-actions">
+        {% include cta-substack.html %}
+        <a class="btn btn-ghost" href="{{ '/mentoria/' | relative_url }}">Conhecer a mentoria</a>
+      </div>
+      <p class="kicker kicker-row hero-strip">
+        <span class="kicker-gold">Resultado</span>
+        <span class="kicker-gold">Personalidade</span>
+        <span class="kicker-gold">Presença</span>
+      </p>
     </div>
+    <figure class="hero-portrait">
+      <img
+        src="{{ '/assets/img/ita-formatura.webp' | relative_url }}"
+        width="1200"
+        height="1200"
+        alt="Daniel Magalhães na formatura do ITA"
+        fetchpriority="high"
+        decoding="async">
+      <figcaption class="who-arrow">
+        <span class="who-shaft" aria-hidden="true"></span>
+        <span class="who-label">Daniel Magalhães · Auditor Fiscal no Paraná</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section section-track">
+  <div class="wrap">
+    <p class="kicker">Resultado</p>
+    <h2>A seta aponta para um lugar.</h2>
+    <p class="section-lead">Não é narrativa de herói. É o rastro de quem competiu de novo depois de falhar.</p>
+    {% include arrow-path.html %}
   </div>
 </section>
 
 <section class="section">
   <div class="wrap grid-2">
     <div>
-      <p class="kicker">A jornada</p>
-      <h2>Atleta dos concursos de alto nível</h2>
-      <p>Não nasci com essa mentalidade pronta. Fui aprendendo, aplicando e internalizando aos poucos — com disciplina e intensidade comparáveis às de um atleta de alto rendimento.</p>
-      <p>Comecei a fazer provas aos 13. Fui nomeado Auditor Fiscal aos 28. Entre esses dois pontos, eu vivi. Errei. Recomecei. Fui constante.</p>
-      <p>Agora compartilho o que me trouxe até aqui: método no lugar de milagre, rotina no lugar de motivação.</p>
+      <p class="kicker">Personalidade</p>
+      <h2>Atleta dos concursos. Sem romance.</h2>
+      <p>Não nasci com essa mentalidade. Fui construindo — com disciplina comparável à de um atleta de alto rendimento.</p>
+      <p>Entrei no IME. Voltei. Ouvi que se eu não passasse no ITA, acabou. Apaguei isso. Troquei pensamento por movimento.</p>
+      <p>Método no lugar de milagre. Rotina no lugar de motivação. A história vive no Sobre — e nos capítulos.</p>
       <p><a href="{{ '/sobre/' | relative_url }}">A história completa →</a></p>
     </div>
-    <img class="photo" src="{{ '/assets/img/daniel.webp' | relative_url }}" alt="Daniel Magalhães" width="900" height="1125" loading="lazy" decoding="async">
+    <img class="photo" src="{{ '/assets/img/daniel.webp' | relative_url }}" alt="Daniel Magalhães" width="900" height="1200" loading="lazy" decoding="async">
   </div>
 </section>
 
 <section class="section">
   <div class="wrap">
-    <p class="kicker">Os quatro pilares</p>
-    <h2>Estratégia que funciona. Método que comprova.</h2>
-    <div class="pillars">
-      <article class="pillar">
-        <h3>Estratégia</h3>
-        <p>Escolher a prova certa, o ritmo certo e o próximo degrau. Sem heroísmo. Com contexto.</p>
+    <p class="kicker">Os três eixos</p>
+    <h2>O que sustenta essa conversa.</h2>
+    <div class="focus-grid">
+      <article class="focus-card">
+        <img src="{{ '/assets/img/conquistas.webp' | relative_url }}" alt="" width="1600" height="900" loading="lazy">
+        <div class="focus-body">
+          <h3>Resultado</h3>
+          <p>CEFET, CMF, ITA, Tesouro, SEFAZ-PR. A seta termina em Auditor Fiscal no Paraná.</p>
+        </div>
       </article>
-      <article class="pillar">
-        <h3>Método</h3>
-        <p>Constância abre portas. A aprovação no ITA não foi milagre. Foi estrutura e repetição.</p>
+      <article class="focus-card">
+        <img src="{{ '/assets/img/personalidade.webp' | relative_url }}" alt="" width="1000" height="1333" loading="lazy">
+        <div class="focus-body">
+          <h3>Personalidade</h3>
+          <p>Primeira pessoa. Sem vitimismo. Quem já errou o voo e voltou a treinar.</p>
+        </div>
       </article>
-      <article class="pillar">
-        <h3>Mentoria</h3>
-        <p>Bons mentores mudam destinos. Em toda a minha vida procurei por eles. Isso fez diferença.</p>
+      <article class="focus-card">
+        <img src="{{ '/assets/img/presenca.webp' | relative_url }}" alt="" width="1600" height="900" loading="lazy">
+        <div class="focus-body">
+          <h3>Presença digital</h3>
+          <p>Capítulos no Substack. A conversa contínua, em público, no tom certo.</p>
+        </div>
       </article>
-      <article class="pillar">
-        <h3>Resultados</h3>
-        <p>CEFET, CMF, ITA, Tesouro Nacional, SEFAZ. Não uma narrativa de herói. Uma jornada real.</p>
-      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap grid-2 grid-2-rev">
+    <img class="photo photo-wide" src="{{ '/assets/img/presenca.webp' | relative_url }}" alt="Escrita noturna — presença digital" width="1600" height="900" loading="lazy" decoding="async">
+    <div>
+      <p class="kicker">Presença digital</p>
+      <h2>A conversa contínua está no Substack.</h2>
+      <p>Não vendo curso milagroso. Escrevo capítulos. ITA, IME, SEFAZ, o peso de voltar.</p>
+      <p>Se o tom fizer sentido, assine. É o melhor jeito de saber se essa conversa é para você.</p>
+      <p class="cta-row">
+        {% include cta-substack.html %}
+        <a class="btn btn-ghost" href="{{ '/escritos/' | relative_url }}">Ler os escritos</a>
+      </p>
     </div>
   </div>
 </section>

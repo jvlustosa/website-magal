@@ -10,7 +10,7 @@ description: Contato de Daniel Magalhães para mentoria em concursos públicos e
 A conversa contínua está no Substack. É lá que publico os capítulos, os bastidores e o que estou pensando agora.
 
 <p class="cta-row">
-  <a class="btn btn-gold" href="https://danielmagal.substack.com/" rel="noopener">danielmagal.substack.com</a>
+  {% include cta-substack.html %}
   <a class="btn btn-ghost" href="mailto:danielmagal@substack.com">danielmagal@substack.com</a>
 </p>
 

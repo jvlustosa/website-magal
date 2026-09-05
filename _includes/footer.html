@@ -1,12 +1,14 @@
+{% include cta-band.html %}
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <p class="footer-brand">Daniel Magal</p>
-    <p class="footer-tag">Estratégia · Método · Mentoria · Resultados</p>
+    <p class="footer-tag">Resultado · Personalidade · Presença</p>
+    <div class="ornament" aria-hidden="true"><span></span></div>
     <nav aria-label="Rodapé">
       <a href="{{ '/sobre/' | relative_url }}">Sobre</a>
       <a href="{{ '/mentoria/' | relative_url }}">Mentoria</a>
       <a href="{{ '/escritos/' | relative_url }}">Escritos</a>
-      <a href="https://danielmagal.substack.com/" rel="noopener">Substack</a>
+      <a href="{{ site.substack_subscribe | default: 'https://danielmagal.substack.com/subscribe' }}" rel="noopener">{% include icon-substack.html %} Se inscreva</a>
       <a href="{{ '/sitemap.xml' | relative_url }}">Sitemap</a>
     </nav>
     <p class="footer-copy">© {{ site.time | date: '%Y' }} Daniel Magalhães</p>

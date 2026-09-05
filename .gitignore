@@ -5,3 +5,7 @@ _site/
 vendor/
 .bundle/
 .vercel
+
+# Intermediate image sources (kept local, not versioned)
+*-src.png
+*-src.jpg
