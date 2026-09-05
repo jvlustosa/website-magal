@@ -64,3 +64,4 @@ exclude:
 
 include:
   - _redirects
+  - _headers
