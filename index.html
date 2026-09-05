@@ -1,0 +1,86 @@
+---
+layout: home
+title: Mentoria para Concursos Públicos
+description: Auditor Fiscal, formado pelo ITA. Mentalidade de alto rendimento para concursos públicos. Estratégia, método, mentoria e resultados.
+permalink: /
+---
+<section class="hero">
+  <img
+    class="hero-banner"
+    src="{{ '/assets/img/banner.webp' | relative_url }}"
+    srcset="{{ '/assets/img/banner.webp' | relative_url }} 1024w"
+    sizes="100vw"
+    width="1024"
+    height="170"
+    alt="Daniel Magal — Estratégia, Método, Mentoria, Resultados"
+    fetchpriority="high"
+    decoding="async">
+  <div class="wrap hero-copy">
+    <p class="kicker">Estratégia · Método · Mentoria · Resultados</p>
+    <h1 class="hero-name">Daniel Magal</h1>
+    <p class="hero-sub">Mentoria para concursos públicos</p>
+    <p class="hero-line">Hoje sou Auditor Fiscal. Já fui Auditor do Tesouro Nacional, aprovado em vários concursos e formado pelo ITA. Minha prosperidade veio após anos de provas, falhas e recomeços.</p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="{{ '/mentoria/' | relative_url }}">Conhecer a mentoria</a>
+      <a class="btn btn-ghost" href="https://danielmagal.substack.com/" rel="noopener">Ler no Substack</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap grid-2">
+    <div>
+      <p class="kicker">A jornada</p>
+      <h2>Atleta dos concursos de alto nível</h2>
+      <p>Não nasci com essa mentalidade pronta. Fui aprendendo, aplicando e internalizando aos poucos — com disciplina e intensidade comparáveis às de um atleta de alto rendimento.</p>
+      <p>Comecei a fazer provas aos 13. Fui nomeado Auditor Fiscal aos 28. Entre esses dois pontos, eu vivi. Errei. Recomecei. Fui constante.</p>
+      <p>Agora compartilho o que me trouxe até aqui: método no lugar de milagre, rotina no lugar de motivação.</p>
+      <p><a href="{{ '/sobre/' | relative_url }}">A história completa →</a></p>
+    </div>
+    <img class="photo" src="{{ '/assets/img/daniel.webp' | relative_url }}" alt="Daniel Magalhães" width="900" height="1125" loading="lazy" decoding="async">
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="kicker">Os quatro pilares</p>
+    <h2>Estratégia que funciona. Método que comprova.</h2>
+    <div class="pillars">
+      <article class="pillar">
+        <h3>Estratégia</h3>
+        <p>Escolher a prova certa, o ritmo certo e o próximo degrau. Sem heroísmo. Com contexto.</p>
+      </article>
+      <article class="pillar">
+        <h3>Método</h3>
+        <p>Constância abre portas. A aprovação no ITA não foi milagre. Foi estrutura e repetição.</p>
+      </article>
+      <article class="pillar">
+        <h3>Mentoria</h3>
+        <p>Bons mentores mudam destinos. Em toda a minha vida procurei por eles. Isso fez diferença.</p>
+      </article>
+      <article class="pillar">
+        <h3>Resultados</h3>
+        <p>CEFET, CMF, ITA, Tesouro Nacional, SEFAZ. Não uma narrativa de herói. Uma jornada real.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="kicker">Escritos</p>
+    <h2>Capítulos da jornada</h2>
+    <div class="cards">
+      {% for post in site.posts limit: 3 %}
+      <a class="card" href="{{ post.url | relative_url }}">
+        {% if post.image %}<img src="{{ post.image | relative_url }}" alt="" width="800" height="450" loading="lazy">{% endif %}
+        <div class="card-body">
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.description }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    <p class="cta-row"><a class="btn btn-ghost" href="{{ '/escritos/' | relative_url }}">Ver todos os escritos</a></p>
+  </div>
+</section>

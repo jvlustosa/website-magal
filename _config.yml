@@ -1,0 +1,64 @@
+title: Daniel Magalhães
+tagline: Mentoria para Concursos Públicos
+description: >-
+  Auditor Fiscal, formado pelo ITA. Mentoria e mentalidade de alto rendimento
+  para concursos públicos. Estratégia que funciona. Método que comprova.
+  Resultados que transformam.
+url: https://danielmagal.com.br
+baseurl: ""
+lang: pt-BR
+locale: pt_BR
+timezone: America/Sao_Paulo
+
+author:
+  name: Daniel Magalhães
+  short_name: Daniel Magal
+  email: danielmagal@substack.com
+
+social:
+  name: Daniel Magalhães
+  links:
+    - https://danielmagal.substack.com/
+
+keywords: >-
+  Daniel Magalhães, Daniel Magal, mentoria concursos públicos, auditor fiscal,
+  ITA, alto rendimento, SEFAZ, mentalidade de atleta, concursos de alto nível
+
+markdown: kramdown
+permalink: /:categories/:title/
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/og.jpg
+      sitemap: true
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      sitemap: true
+
+feed:
+  path: feed.xml
+  excerpt_only: true
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+  - vercel.json
+  - .ruby-version
+  - .gitignore
+
+include:
+  - _redirects

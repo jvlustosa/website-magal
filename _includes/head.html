@@ -1,0 +1,30 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% seo %}
+<meta name="theme-color" content="#0B1220">
+<meta name="robots" content="{% if page.sitemap == false %}noindex, nofollow{% else %}index, follow, max-image-preview:large{% endif %}">
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | absolute_url }}">
+<link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="preload" href="{{ '/assets/fonts/cinzel-700.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+{% if page.layout == 'home' %}
+<link rel="preload" href="{{ '/assets/img/banner.webp' | relative_url }}" as="image" type="image/webp" fetchpriority="high">
+{% endif %}
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Daniel Magalhães",
+  "alternateName": "Daniel Magal",
+  "url": "{{ site.url }}{{ site.baseurl }}/",
+  "image": "{{ '/assets/img/daniel.jpg' | absolute_url }}",
+  "jobTitle": "Auditor Fiscal",
+  "description": "{{ site.description | strip }}",
+  "sameAs": ["https://danielmagal.substack.com/"],
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Instituto Tecnológico de Aeronáutica",
+    "alternateName": "ITA"
+  }
+}
+</script>

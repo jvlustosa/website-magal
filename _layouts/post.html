@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<article class="page wrap prose" itemscope itemtype="https://schema.org/Article">
+  <header class="page-head">
+    <p class="kicker">{{ page.date | date: '%d %b %Y' }}</p>
+    <h1 itemprop="headline">{{ page.title }}</h1>
+    {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+  </header>
+  {% if page.image and page.image != '/assets/img/og.jpg' %}
+  <figure class="post-hero">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}" width="1200" height="675" loading="eager">
+  </figure>
+  {% endif %}
+  <div itemprop="articleBody">
+    {{ content }}
+  </div>
+  {% if page.substack %}
+  <p class="cta-row">
+    <a class="btn btn-gold" href="{{ page.substack }}" rel="noopener">Ler o capítulo completo no Substack</a>
+  </p>
+  {% endif %}
+</article>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ page.title | jsonify }},
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  "author": { "@type": "Person", "name": "Daniel Magalhães" },
+  "publisher": { "@type": "Person", "name": "Daniel Magalhães" },
+  "mainEntityOfPage": "{{ page.url | absolute_url }}",
+  "image": "{{ page.image | default: '/assets/img/og.jpg' | absolute_url }}"
+}
+</script>

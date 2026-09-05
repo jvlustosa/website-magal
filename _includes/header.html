@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Daniel Magal — início">
+      <img src="{{ '/assets/img/logo.svg' | relative_url }}" width="36" height="36" alt="" class="brand-mark">
+      <span class="brand-name">Daniel Magal</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Principal">
+      <a href="{{ '/sobre/' | relative_url }}"{% if page.url == '/sobre/' %} aria-current="page"{% endif %}>Sobre</a>
+      <a href="{{ '/mentoria/' | relative_url }}"{% if page.url == '/mentoria/' %} aria-current="page"{% endif %}>Mentoria</a>
+      <a href="{{ '/escritos/' | relative_url }}"{% if page.url == '/escritos/' %} aria-current="page"{% endif %}>Escritos</a>
+      <a href="{{ '/contato/' | relative_url }}"{% if page.url == '/contato/' %} aria-current="page"{% endif %}>Contato</a>
+    </nav>
+  </div>
+</header>
