@@ -9,20 +9,13 @@ permalink: /
     <div class="hero-copy">
       <p class="hero-sub">Auditor Fiscal · Paraná · ITA</p>
       <h1 class="hero-name">Daniel Magal</h1>
-      <div class="ornament" aria-hidden="true"><span></span></div>
-      {% include institutions.html class="inst-row-hero" %}
       <p class="hero-line">Aos 13 eu fazia prova. Aos 18 voltei do IME. Aos 28 tomei posse. Entre um ponto e outro, eu vivi — e escrevo isso em público.</p>
       <div class="hero-actions">
         {% include cta-substack.html %}
         <a class="btn btn-ghost" href="{{ '/mentoria/' | relative_url }}">Conhecer a mentoria</a>
       </div>
-      <p class="kicker kicker-row hero-strip">
-        <span class="kicker-gold">Resultado</span>
-        <span class="kicker-gold">Personalidade</span>
-        <span class="kicker-gold">Presença</span>
-      </p>
     </div>
-    <figure class="hero-portrait">
+    <div class="hero-portrait">
       <img
         src="{{ '/assets/img/ita-formatura.webp' | relative_url }}"
         width="1200"
@@ -30,11 +23,7 @@ permalink: /
         alt="Daniel Magalhães na formatura do ITA"
         fetchpriority="high"
         decoding="async">
-      <figcaption class="who-arrow">
-        <span class="who-shaft" aria-hidden="true"></span>
-        <span class="who-label">Daniel Magalhães · Auditor Fiscal no Paraná</span>
-      </figcaption>
-    </figure>
+    </div>
   </div>
 </section>
 
@@ -54,40 +43,10 @@ permalink: /
       <h2>Atleta dos concursos. Sem romance.</h2>
       <p>Não nasci com essa mentalidade. Fui construindo — com disciplina comparável à de um atleta de alto rendimento.</p>
       <p>Entrei no IME. Voltei. Ouvi que se eu não passasse no ITA, acabou. Apaguei isso. Troquei pensamento por movimento.</p>
-      <p>Método no lugar de milagre. Rotina no lugar de motivação. A história vive no Sobre — e nos capítulos.</p>
+      <p>Método no lugar de milagre. Rotina no lugar de motivação.</p>
       <p><a href="{{ '/sobre/' | relative_url }}">A história completa →</a></p>
     </div>
     <img class="photo" src="{{ '/assets/img/daniel.webp' | relative_url }}" alt="Daniel Magalhães" width="900" height="1200" loading="lazy" decoding="async">
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <p class="kicker">Os três eixos</p>
-    <h2>O que sustenta essa conversa.</h2>
-    <div class="focus-grid">
-      <article class="focus-card">
-        <img src="{{ '/assets/img/conquistas.webp' | relative_url }}" alt="" width="1600" height="900" loading="lazy">
-        <div class="focus-body">
-          <h3>Resultado</h3>
-          <p>CEFET, CMF, ITA, Tesouro, SEFAZ-PR. A seta termina em Auditor Fiscal no Paraná.</p>
-        </div>
-      </article>
-      <article class="focus-card">
-        <img src="{{ '/assets/img/personalidade.webp' | relative_url }}" alt="" width="1000" height="1333" loading="lazy">
-        <div class="focus-body">
-          <h3>Personalidade</h3>
-          <p>Primeira pessoa. Sem vitimismo. Quem já errou o voo e voltou a treinar.</p>
-        </div>
-      </article>
-      <article class="focus-card">
-        <img src="{{ '/assets/img/presenca.webp' | relative_url }}" alt="" width="1600" height="900" loading="lazy">
-        <div class="focus-body">
-          <h3>Presença digital</h3>
-          <p>Capítulos no Substack. A conversa contínua, em público, no tom certo.</p>
-        </div>
-      </article>
-    </div>
   </div>
 </section>
 
@@ -99,10 +58,7 @@ permalink: /
       <h2>A conversa contínua está no Substack.</h2>
       <p>Não vendo curso milagroso. Escrevo capítulos. ITA, IME, SEFAZ, o peso de voltar.</p>
       <p>Se o tom fizer sentido, assine. É o melhor jeito de saber se essa conversa é para você.</p>
-      <p class="cta-row">
-        {% include cta-substack.html %}
-        <a class="btn btn-ghost" href="{{ '/escritos/' | relative_url }}">Ler os escritos</a>
-      </p>
+      <p class="cta-row">{% include cta-substack.html %}</p>
     </div>
   </div>
 </section>
