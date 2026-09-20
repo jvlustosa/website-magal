@@ -6,6 +6,7 @@
     "serve": "export PATH=\"$(ruby -e 'print Gem.user_dir')/bin:$PATH\" && bundle exec jekyll serve --livereload",
     "build": "export PATH=\"$(ruby -e 'print Gem.user_dir')/bin:$PATH\" && JEKYLL_ENV=production bundle exec jekyll build",
     "clean": "export PATH=\"$(ruby -e 'print Gem.user_dir')/bin:$PATH\" && bundle exec jekyll clean",
-    "setup": "export PATH=\"$(ruby -e 'print Gem.user_dir')/bin:$PATH\" && bundle install"
+    "setup": "export PATH=\"$(ruby -e 'print Gem.user_dir')/bin:$PATH\" && bundle install",
+    "format": "npx --yes prettier@3.3.3 --write \"{assets,_data}/**/*.{css,js,json,yml,yaml}\" \"*.json\""
   }
 }

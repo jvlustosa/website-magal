@@ -1,0 +1,41 @@
+name: Format
+
+on:
+  push:
+    branches: [main]
+
+# A GITHUB_TOKEN push does not trigger workflows, so the auto-commit cannot
+# re-enter this workflow. The actor guard is a second line of defence.
+concurrency:
+  group: format-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  format:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run Prettier
+        run: npm run format
+
+      - name: Commit formatting
+        run: |
+          if git diff --quiet; then
+            echo "Nothing to format."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "chore: aplica formatacao automatica"
+          git push
