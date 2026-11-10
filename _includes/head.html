@@ -10,6 +10,11 @@
 {% if page.layout == 'home' %}
 <link rel="preload" href="{{ '/assets/img/ita-formatura.webp' | relative_url }}" as="image" type="image/webp" fetchpriority="high">
 {% endif %}
+{% if page.hand_font %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+{% endif %}
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 <script type="application/ld+json">
 {

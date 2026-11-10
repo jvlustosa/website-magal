@@ -16,8 +16,10 @@
       </button>
     </div>
     <nav id="site-nav" class="site-nav" aria-label="Principal">
+      <a class="nav-substack" href="{{ site.substack_subscribe | default: 'https://danielmagal.substack.com/subscribe' }}" rel="noopener">Se inscreva</a>
       <a href="{{ '/sobre/' | relative_url }}"{% if page.url == '/sobre/' %} aria-current="page"{% endif %}>Sobre</a>
       <a href="{{ '/mentoria/' | relative_url }}"{% if page.url == '/mentoria/' %} aria-current="page"{% endif %}>Mentoria</a>
+      <a href="{{ '/discursivas/' | relative_url }}"{% if page.url == '/discursivas/' %} aria-current="page"{% endif %}>Curso de Discursivas</a>
       <a href="{{ '/escritos/' | relative_url }}"{% if page.url == '/escritos/' %} aria-current="page"{% endif %}>Escritos</a>
       <a href="{{ '/contato/' | relative_url }}"{% if page.url == '/contato/' %} aria-current="page"{% endif %}>Contato</a>
     </nav>

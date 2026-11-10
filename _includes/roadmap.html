@@ -1,66 +1,97 @@
 {% comment %}
-  Roadmap da trajetoria. `stack=true` renderiza a variante vertical (pagina Sobre).
-  O tooltip abre no hover e no foco de teclado; o nome curto continua visivel sempre.
+  Trilho de aprovacoes no estilo de cartoes com brasao.
+  Em telas estreitas a fileira rola na horizontal.
 {% endcomment %}
-<ol class="roadmap{% if include.stack %} roadmap-stack{% endif %}">
-  <li>
-    <span class="rm-node" aria-hidden="true"></span>
-    <span class="rm-step">01</span>
-    <span class="rm-badge" tabindex="0" aria-describedby="rm-tip-cefet">
-      <img class="rm-mark" src="{{ '/assets/img/inst/cefet.svg' | relative_url }}" alt="" width="28" height="28" loading="lazy">
-      <span class="rm-tip" role="tooltip" id="rm-tip-cefet">Centro Federal de Educação Tecnológica do Ceará</span>
-    </span>
-    <span class="rm-name">CEFET</span>
-    <span class="rm-meta">Primeiro degrau</span>
-  </li>
-  <li>
-    <span class="rm-node" aria-hidden="true"></span>
-    <span class="rm-step">02</span>
-    <span class="rm-badge" tabindex="0" aria-describedby="rm-tip-cmf">
-      <img class="rm-mark" src="{{ '/assets/img/inst/cmf.svg' | relative_url }}" alt="" width="23" height="28" loading="lazy">
-      <span class="rm-tip" role="tooltip" id="rm-tip-cmf">Colégio Militar de Fortaleza · Exército Brasileiro</span>
-    </span>
-    <span class="rm-name">CMF</span>
-    <span class="rm-meta">Colégio Militar</span>
-  </li>
-  <li>
-    <span class="rm-node" aria-hidden="true"></span>
-    <span class="rm-step">03</span>
-    <span class="rm-badge" tabindex="0" aria-describedby="rm-tip-ita">
-      <img class="rm-mark" src="{{ '/assets/img/inst/ita.png' | relative_url }}" alt="" width="46" height="18" loading="lazy">
-      <span class="rm-tip" role="tooltip" id="rm-tip-ita">Instituto Tecnológico de Aeronáutica · São José dos Campos</span>
-    </span>
-    <span class="rm-name">ITA</span>
-    <span class="rm-meta">Não foi milagre</span>
-    <span class="rm-honor">
-      <span class="rm-honor-title">Magna Cum Laude</span>
-      <span class="rm-honor-sub">0,3% dos formandos</span>
-    </span>
-  </li>
-  <li>
-    <span class="rm-node" aria-hidden="true"></span>
-    <span class="rm-step">04</span>
-    <span class="rm-badge" tabindex="0" aria-describedby="rm-tip-stn">
-      <img class="rm-mark" src="{{ '/assets/img/inst/tesouro.svg' | relative_url }}" alt="" width="28" height="20" loading="lazy">
-      <span class="rm-tip" role="tooltip" id="rm-tip-stn">Secretaria do Tesouro Nacional · Auditor Federal de Finanças e Controle</span>
-    </span>
-    <span class="rm-name">STN</span>
-    <span class="rm-meta">Tesouro Nacional</span>
-  </li>
-  <li>
-    <span class="rm-node" aria-hidden="true"></span>
-    <span class="rm-step">05</span>
-    <span class="rm-badge" tabindex="0" aria-describedby="rm-tip-sefaz">
-      <img class="rm-mark" src="{{ '/assets/img/inst/sefaz.svg' | relative_url }}" alt="" width="23" height="28" loading="lazy">
-      <span class="rm-tip" role="tooltip" id="rm-tip-sefaz">Secretaria da Fazenda do Paraná · Auditor Fiscal</span>
-    </span>
-    <span class="rm-name">SEFAZ-PR</span>
-    <span class="rm-meta">Paraná</span>
-  </li>
-  <li class="rm-dest">
-    <span class="rm-node" aria-hidden="true"></span>
-    <span class="rm-step">Hoje</span>
-    <span class="rm-name">Auditor Fiscal</span>
-    <span class="rm-meta">No Paraná</span>
-  </li>
-</ol>
+<div class="approvals">
+  <p class="approvals-scroll-hint">Percorra a trajetória</p>
+  <ul class="approvals-track" tabindex="0" aria-label="Trajetória de aprovações de Daniel Magalhães">
+    <li class="approval-item">
+      <div class="approval-card" tabindex="0">
+        <div class="approval-logo">
+          <span class="approval-logo-surface approval-logo-pair">
+            <img src="{{ '/assets/img/inst/cefet.svg' | relative_url }}" alt="" width="40" height="40" loading="lazy">
+            <img src="{{ '/assets/img/inst/cmf.svg' | relative_url }}" alt="" width="33" height="40" loading="lazy">
+          </span>
+        </div>
+        <div class="approval-info">
+          <strong class="approval-rank">Aprovado</strong>
+          <span class="approval-institution">CEFET · CMF</span>
+          <span class="approval-role">Primeiros concursos, no mesmo ano</span>
+        </div>
+      </div>
+    </li>
+    <li class="approval-item">
+      <div class="approval-card" tabindex="0">
+        <div class="approval-logo">
+          <span class="approval-logo-surface">
+            <img src="{{ '/assets/img/inst/master.svg' | relative_url }}" alt="" width="40" height="40" loading="lazy">
+          </span>
+        </div>
+        <div class="approval-info">
+          <strong class="approval-rank">Turma ITA</strong>
+          <span class="approval-institution">Master</span>
+          <span class="approval-role">Turma especial ITA</span>
+        </div>
+      </div>
+    </li>
+    <li class="approval-item">
+      <div class="approval-card" tabindex="0">
+        <div class="approval-logo">
+          <span class="approval-logo-surface">
+            <img src="{{ '/assets/img/inst/ime.svg' | relative_url }}" alt="" width="34" height="40" loading="lazy">
+          </span>
+        </div>
+        <div class="approval-info">
+          <strong class="approval-rank">3ª chamada</strong>
+          <span class="approval-institution">IME</span>
+          <span class="approval-role">Entrei e voltei</span>
+          <span class="approval-year">2016</span>
+        </div>
+      </div>
+    </li>
+    <li class="approval-item">
+      <div class="approval-card" tabindex="0">
+        <div class="approval-logo">
+          <span class="approval-logo-surface">
+            <img src="{{ '/assets/img/inst/ita.png' | relative_url }}" alt="" width="66" height="25" loading="lazy">
+          </span>
+        </div>
+        <div class="approval-info">
+          <strong class="approval-rank">Magna Cum Laude</strong>
+          <span class="approval-institution">ITA</span>
+          <span class="approval-role">Engenheiro · 0,3% dos formandos</span>
+          <span class="approval-year">2016</span>
+        </div>
+      </div>
+    </li>
+    <li class="approval-item">
+      <div class="approval-card" tabindex="0">
+        <div class="approval-logo">
+          <span class="approval-logo-surface">
+            <img src="{{ '/assets/img/inst/tesouro.svg' | relative_url }}" alt="" width="40" height="29" loading="lazy">
+          </span>
+        </div>
+        <div class="approval-info">
+          <strong class="approval-rank">Auditor Federal</strong>
+          <span class="approval-institution">STN</span>
+          <span class="approval-role">Tesouro Nacional</span>
+        </div>
+      </div>
+    </li>
+    <li class="approval-item">
+      <div class="approval-card approval-card-now" tabindex="0">
+        <div class="approval-logo">
+          <span class="approval-logo-surface">
+            <img src="{{ '/assets/img/inst/sefaz.svg' | relative_url }}" alt="" width="33" height="40" loading="lazy">
+          </span>
+        </div>
+        <div class="approval-info">
+          <strong class="approval-rank">Auditor Fiscal</strong>
+          <span class="approval-institution">SEFAZ-PR</span>
+          <span class="approval-role">Secretaria da Fazenda do Paraná</span>
+          <span class="approval-year">Hoje</span>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
